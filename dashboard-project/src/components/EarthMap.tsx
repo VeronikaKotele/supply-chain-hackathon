@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as BABYLON from "@babylonjs/core";
-import "@babylonjs/loaders/babylonjs.loaders.min.js";
+import "@babylonjs/loaders";
 
 export function EarthMap() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
