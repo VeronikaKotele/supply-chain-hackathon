@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as BABYLON from "@babylonjs/core";
 import "@babylonjs/loaders";
 

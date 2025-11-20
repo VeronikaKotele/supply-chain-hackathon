@@ -1,3 +1,4 @@
+import React from "react";
 import { TrendingUp, Users, Target, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import {

@@ -1,3 +1,4 @@
+import React from "react";
 import { Navbar } from "./components/Navbar";
 import { HeroPanel } from "./components/HeroPanel";
 import { SummaryCards } from "./components/SummaryCards";
@@ -25,7 +26,7 @@ export default function App() {
 
           <TabsContent value="map" className="space-y-8">
             <div>
-              <h2 className="text-gray-900 mb-6">Interactive Earth Map</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Interactive Earth Map</h2>
               <EarthMap />
               <p className="text-gray-600 mt-4">
                 Use your mouse to rotate and zoom the 3D Earth model. Scroll to zoom in/out.

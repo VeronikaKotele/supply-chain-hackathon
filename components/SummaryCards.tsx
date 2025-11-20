@@ -1,3 +1,4 @@
+import React from "react";
 import { FileText, Clock, CheckCircle, AlertCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Progress } from "./ui/progress";
@@ -44,7 +45,7 @@ export function SummaryCards() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-gray-900">Project Summary</h2>
+      <h2 className="text-2xl font-bold text-gray-900">Project Summary</h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {summaries.map((summary) => {
