@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Navbar } from "./components/Navbar";
+import { HeroPanel } from "./components/HeroPanel";
+import { SummaryCards } from "./components/SummaryCards";
+import { EntriesTable } from "./components/EntriesTable";
+import { EarthMap } from "./components/EarthMap";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      
+      <main className="px-6 py-8 max-w-[1400px] mx-auto">
+        <Tabs defaultValue="overview" className="space-y-8">
+          <TabsList>
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="map">Map</TabsTrigger>
+          </TabsList>
 
-export default App
+          <TabsContent value="overview" className="space-y-8">
+            <HeroPanel />
+            <SummaryCards />
+            <EntriesTable />
+          </TabsContent>
+
+          <TabsContent value="map" className="space-y-8">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Interactive Earth Map</h2>
+              <EarthMap />
+              <p className="text-gray-600 mt-4">
+                Use your mouse to rotate and zoom the 3D Earth model. Scroll to zoom in/out.
+              </p>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </main>
+    </div>
+  );
+}
